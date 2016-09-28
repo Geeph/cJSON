@@ -904,7 +904,7 @@ static char *print_value(cJSON *item, int depth, int fmt, printbuffer *p)
     }
     if (p)
     {
-        switch ((item->type) & 255)
+        switch ((item->type) & 0xFF)
         {
             case cJSON_NULL:
                 out = ensure(p, 5);
@@ -943,7 +943,7 @@ static char *print_value(cJSON *item, int depth, int fmt, printbuffer *p)
     }
     else
     {
-        switch ((item->type) & 255)
+        switch ((item->type) & 0xFF)
         {
             case cJSON_NULL:
                 out = cJSON_strdup("null");
